@@ -46,7 +46,10 @@ public class AddPackageIcon : EditorWindow
         }
         catch (Exception e)
         {
-            Directory.Delete(tempdir, true);
+            if (tempdir != null)
+            {
+                Directory.Delete(tempdir, true);
+            } 
             Debug.Log(e);
         }
     }
